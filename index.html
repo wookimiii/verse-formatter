@@ -1,0 +1,37 @@
+<html>
+<head>
+
+</head>
+<body>
+  <div id="app">
+    <h1>
+      Bible Passage formatter:
+    </h1>
+    <div>
+      <textarea id="my-text" v-model="text"></textarea> 
+      <div id='clean'>
+        <p v-for="(tuple, i) in textMap">
+          <span v-if="tuple[1]">
+            {{ tuple[1] }} <br />
+          </span>
+          {{ tuple[0] }}
+        </p>
+      </div>
+    </div>
+    <h2>Unformatted Input:</h2>
+      <div>
+      Formatted Output:
+      <button class="btn" data-clipboard-target="#output">
+        Copy
+      </button>
+    </div>
+    <textarea id="output" readonly="readonly">{{formattedText.join('\n\n')}}</textarea>
+    <div>
+    
+    </div>
+    <textarea id="output" readonly="readonly">{{references.join(';')}}</textarea>
+    
+  
+  </div>
+</body>
+  </html>
